@@ -1,0 +1,60 @@
+@import 'tailwindcss';
+
+:root {
+	--background: #ffffff;
+	--foreground: #171717;
+	--green-primary: #46a358;
+	--text-primary: #3d3d3d;
+	--text-secondary: #727272;
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-green-primary: var(--green-primary);
+	--color-text-primary: var(--text-primary);
+	--color-text-secondary: var(--text-secondary);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
+}
+
+body {
+	background: var(--background);
+	color: var(--foreground);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 10px;
+
+	@media (width >= 40rem /* 640px */) {
+		max-width: 40rem /* 640px */;
+	}
+	@media (width >= 48rem /* 768px */) {
+		max-width: 48rem /* 768px */;
+	}
+	@media (width >= 64rem /* 1024px */) {
+		max-width: 64rem /* 1024px */;
+	}
+	@media (width >= 75rem /* 1200px */) {
+		max-width: 75rem /* 1200px */;
+	}
+}
+
+.hero-carousel .swiper-slide {
+	padding-left: 40px;
+	background: linear-gradient(
+		97.77deg,
+		rgba(245, 245, 245, 0.5) -23.46%,
+		rgba(245, 245, 245, 0.5) 107.51%
+	);
+}
