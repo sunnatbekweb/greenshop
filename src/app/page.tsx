@@ -2,9 +2,11 @@
 
 import { Card } from '@/components/ui/Card'
 import { Carousel } from '@/components/ui/Carousel'
+import RangeSlider from '@/components/ui/RangeSlider'
 
 const categories = Array.from({ length: 9 })
 const plants = Array.from({ length: 9 })
+const sizes = ['Small', 'Medium', 'Large']
 
 export default function Home() {
 	return (
@@ -17,19 +19,39 @@ export default function Home() {
 			<section className="py-6">
 				<div className="container flex gap-x-12.5">
 					<aside className="max-w-77.5 w-full">
-						<div className="py-3.5 px-4 bg-[#FBFBFB]">
-							<span className="font-bold text-lg leading-4">Categories</span>
-							<ul className="flex flex-col gap-y-5 py-5 px-3">
-								{categories.map((_, index) => (
-									<li
-										key={index}
-										className="flex items-center justify-between"
-									>
-										<button>House Plants</button>
-										<span>({index})</span>
-									</li>
-								))}
-							</ul>
+						<div className="py-3.5 px-4 bg-[#FBFBFB] flex flex-col gap-y-12.5">
+							<div>
+								<span className="font-bold text-lg leading-4">Categories</span>
+								<ul className="flex flex-col gap-y-5 py-5 px-3">
+									{categories.map((_, index) => (
+										<li
+											key={index}
+											className="flex items-center justify-between"
+										>
+											<button>House Plants</button>
+											<span>({index})</span>
+										</li>
+									))}
+								</ul>
+							</div>
+							<div>
+								<span className="font-bold text-lg leading-4">Price Range</span>
+								<RangeSlider />
+							</div>
+							<div>
+								<span className="font-bold text-lg leading-4">Categories</span>
+								<ul className="flex flex-col gap-y-5 py-5 px-3">
+									{sizes.map((size, index) => (
+										<li
+											key={size}
+											className="flex items-center justify-between"
+										>
+											<button>{size}</button>
+											<span>({index})</span>
+										</li>
+									))}
+								</ul>
+							</div>
 						</div>
 					</aside>
 					<div className="w-full">
@@ -46,7 +68,7 @@ export default function Home() {
 								</select>
 							</div>
 						</div>
-						<div className="grid grid-cols-3 gap-x-5 pt-6">
+						<div className="grid grid-cols-3 gap-5 pt-6">
 							{plants.map((_, index) => (
 								<Card key={index} />
 							))}

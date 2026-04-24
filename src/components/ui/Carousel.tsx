@@ -4,11 +4,10 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-// import './styles.css'
-
 // import required modules
 import Image from 'next/image'
 import { Pagination } from 'swiper/modules'
+import { Button } from './Button'
 
 const slides = Array.from({ length: 3 })
 
@@ -38,9 +37,7 @@ export const Carousel = () => {
 									Jungle. Order your favorite plants!
 								</p>
 							</div>
-							<button className="w-fit h-10 px-6 rounded-md bg-green-primary font-bold text-white">
-								Shop now
-							</button>
+							<Button className="w-fit">Shop now</Button>
 						</div>
 						<div>
 							<Image
@@ -48,6 +45,7 @@ export const Carousel = () => {
 								width={518}
 								height={470}
 								alt="Image"
+								loading="eager"
 							/>
 						</div>
 					</div>
