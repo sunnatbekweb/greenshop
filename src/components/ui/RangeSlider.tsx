@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button } from './Button'
+import { Button } from './button'
 import './RangeSlider.css'
 
 const RangeSlider = () => {
@@ -38,7 +38,7 @@ const RangeSlider = () => {
 				/>
 			</div>
 
-			<p className='mb-4'>
+			<p className="mb-4">
 				Price: <span>${min}</span> – <span>${max}</span>
 			</p>
 

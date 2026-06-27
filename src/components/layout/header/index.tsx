@@ -1,6 +1,7 @@
 import { Cart } from '@/assets/icons/Cart'
-import { Logout } from '@/assets/icons/Logout'
+import { Menu } from '@/assets/icons/Menu'
 import { Search } from '@/assets/icons/Search'
+import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -13,11 +14,11 @@ export const Header = () => {
 						src={'/icons/logo.svg'}
 						width={150}
 						height={34}
-						loading='eager'
+						loading="eager"
 						alt="Logo"
 					/>
 				</Link>
-				<nav>
+				<nav className="hidden lg:block">
 					<ul className="flex items-center gap-x-12.5">
 						<li>
 							<Link href={'#'}>Home</Link>
@@ -33,13 +34,26 @@ export const Header = () => {
 						</li>
 					</ul>
 				</nav>
-				<div className="flex items-center gap-x-7.5">
-					<Search />
-					<Cart />
-					<button className="h-9 px-4 rounded-md bg-green-primary text-white flex items-center gap-1">
-						<Logout />
-						<span>Login</span>
-					</button>
+				<div className="flex items-center gap-x-1.75 sm:gap-x-3.75">
+					<Button
+						variant="ghost"
+						size="icon"
+					>
+						<Search />
+					</Button>
+					<Button
+						variant="ghost"
+						size="icon"
+					>
+						<Cart />
+					</Button>
+					<Button
+						variant="ghost"
+						size="icon"
+						className="lg:hidden"
+					>
+						<Menu />
+					</Button>
 				</div>
 			</div>
 		</header>

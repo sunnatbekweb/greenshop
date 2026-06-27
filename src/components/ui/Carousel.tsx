@@ -7,7 +7,7 @@ import 'swiper/css/pagination'
 // import required modules
 import Image from 'next/image'
 import { Pagination } from 'swiper/modules'
-import { Button } from './Button'
+import { Button } from './button'
 
 const slides = Array.from({ length: 3 })
 
